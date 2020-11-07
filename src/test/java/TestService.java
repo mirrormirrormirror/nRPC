@@ -11,7 +11,7 @@ import java.io.IOException;
  * Create by mirror on 2020/11/3
  */
 @ZkConfig(zkHost = "127.0.0.1")
-@RpcServiceStartConfig(packagePath = "com", name = "testService1", nettyPort = 7002)
+@RpcServiceStartConfig(packagePath = "com", name = "testService1", nettyPort = 7001)
 public class TestService {
     @Test
     public void startService() throws NonRpcScanException, IOException, ClassNotFoundException, InterruptedException {

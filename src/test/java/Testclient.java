@@ -1,7 +1,6 @@
 import annotation.ZkConfig;
 import cli.NettyProxyManager;
-import common.RequestsBody;
-import commonInterface.ObjectService;
+import commonInterface.HelloService;
 import org.junit.Test;
 
 /**
@@ -12,8 +11,8 @@ public class Testclient {
     @Test
     public void startCli() {
         //创建代理对象
-        ObjectService objectService = (ObjectService) NettyProxyManager.getNettyProxyBean("testService1", "localhost", ObjectService.class);
-        RequestsBody requests = objectService.getRequests("你好 dubbo~1");
-        System.out.println("result:" + requests.getMethodName());
+        HelloService helloService = (HelloService) NettyProxyManager.getNettyProxyBean("testService1", "localhost", HelloService.class);
+        String msg = helloService.hello("你好 dubbo~1");
+        System.out.println("result:" + msg);
     }
 }
