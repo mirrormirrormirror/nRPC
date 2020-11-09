@@ -66,7 +66,7 @@ public class NettyProxyManager {
      */
     private static RequestsBody getRequestsBody(Method method, Object[] args, Class<?> serivceClass) {
         RequestsBody requestsBody = new RequestsBody();
-        requestsBody.setProtocol(ServerHandler.protocol);
+        requestsBody.setProtocol(ServerHandler.PROTOCOL);
         requestsBody.setClassName(serivceClass.getName());
         // param type
         List<String> typeNameList = new LinkedList<>();

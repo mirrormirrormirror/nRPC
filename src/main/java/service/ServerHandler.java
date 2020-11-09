@@ -21,7 +21,7 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
 
 
 
-    final public static String protocol = "nRPC";
+    final public static String PROTOCOL = "nRPC";
 
 
     @Override
@@ -40,7 +40,7 @@ public class ServerHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         RequestsBody requestsBody = KryoUtil.getSerializableObject(RequestsBody.class, msg.toString());
         // 检查协议
-        if (!requestsBody.getProtocol().equals(protocol)) {
+        if (!requestsBody.getProtocol().equals(PROTOCOL)) {
             ctx.writeAndFlush(StatusCode.PROTOCOL_COMMON);
             return;
         }
